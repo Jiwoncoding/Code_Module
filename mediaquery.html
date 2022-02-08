@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mediaquery</title>
+    <style>
+        header {position:fixed; width:15%; height: 100%; top:0; left:0;}
+        nav {position:relative; width:85%; height: 35%; margin-left:15%;}
+        section {width:85%; position: relative; margin-left: 15%;}
+        article {float:left; height: 260px;}
+        /* 각각 article:nth-child()으로 크기 지정하기 → 생략 */
+
+        /* 480px~639px 구간 미디어쿼리 설정 */
+        @media screen and (min-width:480px) and (max-width:639px) {
+            header {position:relative; width:100%; height: 130px;}
+            nav {display: none;}
+            section {width: 100%; margin-left: 0;}
+            article {height: 150px;}
+            /* 각각 article:nth-child()으로 크기 지정하기 */
+            /* header의 높이 값을 130px로 늘리고 nav는 숨김처리, article의 높이도 공통으로 줄여준 뒤, width값 설정 몇개는 display:none */
+        }
+
+        /* 479px이하 구간 미디어쿼리 설정 */
+        @media screen and (max-width:479px){
+            header {position: fixed; width: 100%; height: 100%; z-index:5;}
+            nav {display: none;}
+            section {width: 100%; margin-left:0; z-index:4;}
+            article { display: none;}
+            article:nth-child(1) {display: block; position: fixed; width: 100%; height: 100%;}
+        }
+
+
+
+    </style>
+    
+</head>
+<body>
+    <header></header>
+    <nav></nav>
+    <section>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+        <article></article>
+    </section>
+</body>
+</html>
