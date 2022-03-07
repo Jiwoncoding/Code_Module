@@ -1,1 +1,63 @@
+원 페이지 사이트에서는 화면 전체가 좌우 또는 위아래로 스크롤되는데, 
+fullPage.js 플러그인에는 사이트를 풀 스크린으로 만들면서 스크롤하는 기능까지 있다.
+또한 내용이 스크롤될 때마다 메뉴에서 해당 항목이 활성화된다.
 
+1. 플러그인 다운로드하기
+github.com/alvarotrigo/fullPage.js
+깃허브의 파일 중 플러그인 사용을 위해 필요한 파일은 jquery.fullPage.js(또는 jquery.fullPage.min.js) 파일과
+jquery.fullPage.css 파일이다.
+
+2. 전체를 감싸는 div의 id를 fullPage로 지정하고, 각 section은 class를 section으로 지정
+
+3. css 파일과 js파일을 문서안에 포함한다. 
+<link href="css/jquery.fullPage.css" rel="stylesheet">
+<script src="js/jquery.fullPage.js"></script>
+
+4. 메뉴 막대를 제외한 내용 전체를 감싸는 <div> 태그를 삽입하고 id 값을 fullPage로 지정
+
+5. 세로 스크롤 영역 지정하기 : class="section" 원래 있던 class가 있다면 뒤에 section 추가..
+
+6. 가로 스크롤 영역 지정하기 : class="slide"
+
+7. fullPage 실행하기!!!!
+<script>
+    $(document).ready(function(){
+        $("#fullPage").fullPage();
+    });
+</script>
+
+-------------------------------------------------------------------------------------------------
+
+원 페이지 사이트에서 내비게이션 지정하기 - anchors 옵션 사용하기
+
+1. 만약 문서에 모두 4개의 .section 영역이 있다면 4개의 이름을 지정한다. .section 영역에 순서대로 할당된다.
+<script>
+    $(document).ready(function(){
+        $("#fullPage").fullPage();
+
+        anchors: ["1stBook", "2ndBook", "3rdBook", "videoList"]
+
+    });
+</script>
+
+2. 이렇게 만든 앵커 이름을 어느 메뉴에서 사용할지도 알려줘야 한다. 메뉴 막대에 id 값을 지정한 후(id="topMenu") 그 값을 알려주는 menu옵션을 플러그인 실행 소스 코드에 추가한다. 
+<script>
+    $(document).ready(function(){
+        $("#fullPage").fullPage();
+
+        anchors: ["1stBook", "2ndBook", "3rdBook", "videoList"],
+        menu: "#topMenu"
+
+    });
+</script>
+
+3. 메뉴를 만드는 각 <li> 태그에 data-menuanchor를 이용해 링크할 앵커를 알려준다. 이렇게 하면 특정 항목을 클릭해
+해당 화면으로 이동했을 때 내비게이션에 그 항목이 활성화되어 표시된다. 
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav" id="topMenu">
+        <li data-menuanchor="1stBook"><a href="#1stBook">...</a></li>
+        <li data-menuanchor="2ndBook"><a href="#2ndBook">...</a></li>
+        <li data-menuanchor="3rdBook"><a href="#3rdBook">...</a></li>
+        <li data-menuanchor="4thBook"><a href="#videoList">...</a></li>
+    </ul>
+</div>
