@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- bxSlider 플러그인을 사용하기 위해 스타일 시트 파일 연결 -->
+    <link rel="stylesheet" href="jquery.bxslider.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="jquery.bxslider.js"></script>
+    <title>flexbox Website</title>
+</head>
+<body>
+    <!-- 헤더 -->
+    <!-- 캐러셀은 헤더 부분에 삽입할 것 -->
+    <section>
+        <div class="wrapper">
+            <div class="banner">
+                <div class="bxslider">
+                    <div><img src=""></div>
+                    <div><img src=""></div>
+                    <div><img src=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 좌우 2개 항목 -->
+    <section>
+        <div class="wrapper">
+            <div class="intro">
+                <div class="text">
+                    <p></p>
+                </div>
+                <div class="img">
+                    <img src="" width="250">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 한 줄에 여러 항목 -->
+    <div class="program-list">
+        <div class="program"></div>
+        <div class="program"></div>
+        <div class="program"></div>
+        <div class="program"></div>
+    </div>
 
+    <script>
+        $(function(){
+            let trigger = $('#trigger');
+            let menu = $('nav ul');
+            $(trigger).on('click', function(e){
+                e.preventDefault();
+                menu.slideToggle();
+            });
+
+            $('.bxslider').bxSlider({       // .bxslider 요소에 캐러셀 실행
+                auto: true,  // 자동 스크롤 적용
+                autoHover: true,  // 이미지 위로 마우스 포인터를 올리면 멈추도록 지정
+            });
+        });
+    </script>
+</body>
+</html>
