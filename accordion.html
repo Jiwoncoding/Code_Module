@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+  <style>
+    *{box-sizing: border-box;}
+    body {
+      font-size: 18px;
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      left: 1.6em;
+      font-weight: 300;
+    }
+    a {
+      text-decoration: none;
+      color: gainsboro;
+    }
+    .faq { height: 100vh;}
+    .faq-inner { width: 700px; margin: auto;}
+    .faq-inner h1 { text-align: center; font-size: 50px; font-weight: 500;}
+    .accordion { font-size: 26px; }
+    .accordion .title,
+    .accordion .content {
+      background-color: #303030;
+      padding: 10px 15px;
+      margin-bottom: 7px;
+    }
+    .accordion .title { cursor: pointer;}
+    .accordion .content { display: none;}
+    .accordion .title.active { background-color: crimson;}
+    .newsletter {
+      
+    }
+    .newsletter input {
+      margin-right: 10px;
+    }
+    .newsletter button {
+      cursor: pointer;
+      margin-bottom: 100px;
+    }
+  </style>
+
+  <title>FAQ 어코디언</title>
+
+
+</head>
+<body>
+
+  <section class="faq">
+    <div class="faq-inner">
+      <h1>FAQ</h1>
+      <div class="accordion">
+        <div class="title active">멤버십 및 요금</div>
+        <div class="content">넷플릭스는 고객의 요구에 맞는 다양한 멤버십을 제공합니다. 선택하는 멤버십에 따라 영상 화질 및 넷플릭스 시청을 위해 동시접속 가능한 명수가 달라집니다.</div>
+        <div class="title">타인의 내 계정 사용을 중단시키는 방법</div>
+        <div class="content">누군가가 동의 없이 내 계정을 사용하고 있는 경우 다음의 작업을 수행하여 더 이상 사용하지 못하도록 하세요.</div>
+        <div class="title">넷플릭스 기프트카드</div>
+        <div class="content">현재 거주 중인 국가에서는 넷플릭스 기프트카드가 판매되지 않습니다. 다른 국가에서 구입한 넷플릭스 기프트카드의 경우 평소 넷플릭스를 결제할 때 사용하는 통화와 기프트카드 통화가 같다면 사용할 수 있습니다.</div>
+        <div class="title">넷플릭스에 가입하는 방법</div>
+        <div class="content">넷플릭스 회원은 매월 가입한 날짜에 요금이 청구됩니다. 계약이나 약정이 없으며 무료로 해지할 수 있습니다. 넷플릭스 서비스가 마음에 들지 않는 경우 멤버십을 변경하거나 언제든지 온라인으로 해지할 수 있습니다.</div>
+        <div class="title">Netflix를 스트리밍할 때 어떤 디바이스를 사용할 수 있나요?</div>
+        <div class="content">Netflix 앱이 제공되는 모든 인터넷 연결 지원 디바이스에서 Netflix를 스트리밍할 수 있습니다. Netflix 지원 디바이스에는 스트리밍 미디어 플레이어, 스마트 TV, 게임 콘솔, 셋톱박스, 블루레이 플레이어, 스마트폰, 태블릿, PC 및 노트북 등이 있습니다.</div>
+        <div class="title">다른 사람 대신 넷플릭스 계정을 어떻게 만드나요?</div>
+        <div class="content">넷플릭스 웹사이트를 통해 다른 사람의 넷플릭스 계정을 생성할 수 있습니다.
+        </div>
+      </div>
+      <div class="newsletter">
+        <p>뉴스레터를 구독하고 싶으신 분들은 구독하기 버튼을 클릭해주세요!</p>
+        <input type="text"><button>구독하기</button>
+      </div>
+    </div>
+  </section>
+
+
+
+  <script>
+      $('.accordion .content').eq(0).show()
+      $('.accordion .title').click(function(){
+        $(this).siblings('.accordion .content').slideUp()
+        $(this).next().stop().slideToggle(300)
+        $(this).toggleClass('active')
+        $(this).siblings('.accordion .title').removeClass('active')
+    })
+  </script>
+
+</body>
+</html>
