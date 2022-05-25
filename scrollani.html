@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/wow.min.js"></script>
+  <title>스크롤하면 시작되는 애니메이션 wow.js AOS.js</title>
+
+  <style>
+    .parent {
+      border: 1px solid #000;
+      width: 800px;
+      padding: 20px;
+    }
+    .parent div {
+      float: left;
+      box-sizing: border-box;
+      border: 3px solid red;
+      width: 50%;
+      height: 200px;
+      text-align: 20px;
+      line-height: 200px;
+      font-size: 3em;
+    }
+    @keyframes ltr {
+      0% { opacity: 0; transform: translateX(-150px);}
+      100% { opacity: 1; transform: translateX(0);}
+    }
+    @keyframes rtl {
+      0% { opacity: 0; transform: translateX(150px);}
+      100% { opacity: 1; transform: translateX(0);}
+    }
+    .left {
+      animation: ltr 1s linear both;
+    }
+    .right {
+      animation: rtl 1s linear both;
+    }
+  </style>
+
+</head>
+<body>
+  
+<h1>Scroll Reveal Animation</h1>
+
+<div class="parent">
+  <div class="left wow ltr">left</div>
+  <div class="right wow rtl">right</div>
+</div>
+
+
+<script>
+  wow = new WOW(
+    {
+      boxClass: 'wow',
+      mobile: true,
+      offset: 0,
+      live: true
+    }
+  )
+  wow.init();
+  </script>
+
+</body>
+</html>
