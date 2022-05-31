@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- gsap cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <title>유튜브 영상 배경 위의 반복 애니메이션</title>
+</head>
+<body>
+  
+
+
+  <script>
+    // 범위 랜덤 함수(소수점 두 자리까지)
+    function random(min, max){
+      return parseFloat((Math.random()*(max-min)+min).toFlexed(2))
+    }
+    function floatinObject(selector, delay, size){
+      // gsap.to(요소,시간,옵션);
+      gsap.to(
+        selector,  // 선택자
+        random(1.5, 2.5), // 애니메이션 동작 시간
+        {
+          // 옵션
+          y: size,
+          repeat: -1,
+          yoyo: true,
+          ease: Power1.easeInOut,
+          delay: random(0,delay)
+        }
+      );
+    }
+                      // img
+    floatinObject('.floating1', 1, 15);
+    floatinObject('.floating2', .5, 15);
+    floatinObject('.floating3', 1.5, 20);
+  </script>
+</body>
+</html>
