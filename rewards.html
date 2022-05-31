@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>유튜브 영상 배경 리워즈 부분</title>
+
+<style>
+  .rewards { position: relative;}
+  .rewards .bg-left {
+    width: 50%;
+    height: 100%;
+    /* 왼쪽 배경과 같은 색상(확대해도 이상하지 않게..) */
+    background-color: #272727;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  /* 오른쪽도 위와 같이 코딩하면 됨 */
+</style>
+
+</head>
+<body>
+  
+<section class="rewards">
+  <div class="bg-left"></div>
+  <div class="bg-right"></div>
+  <div class="inner"></div>
+</section>
+
+</body>
+</html>
