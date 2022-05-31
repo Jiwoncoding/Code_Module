@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- swiperjs cdn -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <title>swiperjs 사용하기</title>
+
+<style>
+  /* 중간 이미지를 확대해도 사이트 중간에 위치시키기 */
+  /* 3개의 819px이미지 margin은 10px 두개니까 20px */
+  width: calc(819px*3+20px);
+
+  /* 부모요소에 position:relative; */
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: calc(819*3+20px)-2);
+  right: 50%;
+  margin-right: calc(819*3+20px)-2);
+</style>
+
+</head>
+<body>
+
+  <script>
+    // new Swiper(선택자, 옵션)
+    new Swiper('.notice-line .swiper-container', {
+      direction: 'vertical',
+      autoplay: true,
+      loop: true
+    });
+  </script>
+</body>
+</html>
