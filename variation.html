@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미디어 쿼리를 적용한 variation</title>
+  <style>
+    .half-media {
+      display: flex;
+      align-items: center;
+    }
+    .half-media__img-wrapper {
+      flex: 0 1 48.3333%;
+      margin-right: 3.33333%;
+    }
+    .half-media__img {
+      width: 100%;
+    }
+    .half-media__body {
+      flex: 1;
+    }
+    .half-media__body > *:last-child {
+      margin-bottom: 0;
+    }
+    .half-media__title {
+      margin-bottom: 10px;
+      font-size: 1.125rem;
+      font-weight: bold;
+    }
+    /* 미디어 쿼리 적용 시 */
+    @media screen and (max-width:768px){
+      .half-media {
+        display: block;
+      }
+      .half-media__img-wrapper {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="half-media">
+    <figure class="half-media__img-wrapper">
+      <img src="./image/smartgirl.gif" alt="스마트한 여자" class="half-media__img">
+    </figure>
+    <div class="half-media__body">
+      <h3 class="half-media__title">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos, quasi.
+        <p class="half-media__text">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente illum reiciendis, voluptatibus quae harum eos non, quaerat totam iusto rerum consequatur dolore ut doloremque repellat facere quod placeat, quas porro!
+        </p>
+      </h3>
+    </div>
+  </div>
+</body>
+</html>
