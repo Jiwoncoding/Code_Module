@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3칼럼</title>
+  <style>
+    .card {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    .card__img-wrapper {
+      position: relative;
+      padding-top: 56.25%;
+      overflow: hidden;
+    }
+    .card__img {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+    .card__body {
+      padding: 15px;
+    }
+    .card__body > *:last-child {
+      margin-bottom: 0;
+    }
+    .card__title {
+      margin-bottom: 5px;
+      font-size: 1.125rem;
+      font-weight: bold;
+    }
+    .card__text {
+      color: #777;
+    }
+    /* wrapper 모듈에 대한 지정  */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .cards--col3 {
+      margin-bottom: -30px;
+    }
+    /* 각 카드에 대한 지정 */
+    .cards--col3 > .cards__item {
+      width: 31.707%;
+      margin-right: 2.43902%;
+      margin-bottom: 30px;
+    }
+    .cards--col3 > .cards__item:nth-of-type(3n) {
+      margin-right: 0;
+    }
+    /* 미디어 쿼리 적용 시 */
+    @media screen and(max-width:768px) {
+      .cards--col3 {
+        margin-bottom: -20px;
+      }
+      .cards > .cards__item {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="cards cards--col3">
+    <div class="cards__item card">
+      <div class="card">
+        <figure class="card__img-wrapper">
+          <img src="./image/smartgirl.gif" alt="스마트한 여자" class="card__img">
+        </figure>
+        <div class="card__body">
+          <h3 class="card__title">
+            웹사이트 구축
+          </h3>
+          <p class="card__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, quibusdam.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards cards--col3">
+    <div class="cards__item card">
+      <div class="card">
+        <figure class="card__img-wrapper">
+          <img src="./image/smartgirl.gif" alt="스마트한 여자" class="card__img">
+        </figure>
+        <div class="card__body">
+          <h3 class="card__title">
+            웹사이트 구축
+          </h3>
+          <p class="card__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, quibusdam.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards cards--col3">
+    <div class="cards__item card">
+      <div class="card">
+        <figure class="card__img-wrapper">
+          <img src="./image/smartgirl.gif" alt="스마트한 여자" class="card__img">
+        </figure>
+        <div class="card__body">
+          <h3 class="card__title">
+            웹사이트 구축
+          </h3>
+          <p class="card__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, quibusdam.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
