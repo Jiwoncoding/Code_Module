@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <title>이미지를 가로*세로로 배열하기</title>
+  <style>
+    .image-container {
+      position: relative;
+    }
+    .image-container img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 120px;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    이미지의 시작 위치 left:100 top:100
+    하나의 이미지 영역은 200*200
+    이미지를 3열로 배열
+  -->
+  <div>
+  <button id="btnStart">배열시작</button>
+  </div>
+  <div class="image-container">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+  </div>
+
+
+  <script>
+    $(document).ready(function(){
+      // 버튼 클릭 이벤트 실행
+      $("#btnStart").click(function(){
+        // 이미지 찾기
+        var $images = $("img");
+        // 이미지 개수 구하기
+        var length = $images.length;
+
+       // 이미지 배열하기
+       for(var i=0; i<length; i++){
+        // n번째 이미지 구하기
+        var $img = $images.eq(i);
+        // 위치 값 구하기
+        var x = 100+((i%3)*200);
+        var y = 100+(parseInt(i/3)*200);
+        // 위치 설정
+        $images.eq(i).css({
+        left: x,
+        top: y   
+        });
+      }
+    });
+  });
+  </script>
+</body>
+</html>
