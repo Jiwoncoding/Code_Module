@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <title>탭메뉴 함수로 만들기</title>
+  <style>
+    .tab-menu {
+      list-style: none;
+      height: 80px;
+    }
+    .tab-menu li {
+      width: 99px;
+      height: 40px;
+      background-position-y: 0;
+      text-indent: -1000px;
+      overflow: hidden;
+      display: inline-block;
+      float: left;
+    }
+    .tab-menu li:hover {
+      background-position-y: -40px;
+    }
+    .tab-menu li .select {
+      background-position-y: -80px;
+      height: 80px;
+    }
+    .tab-menu li .menuitem1 {
+      background-image: url('./image/bg.jpg');
+    }
+    .tab-menu li .menuitem2 {
+      background-image: url('./image/bg.jpg');
+    }
+    .tab-menu li .menuitem3 {
+      background-image: url('./image/bg.jpg');
+    }
+    .tab-menu li .menuitem4 {
+      background-image: url('./image/bg.jpg');
+    }
+    .tab-menu li .menuitem5 {
+      background-image: url('./image/bg.jpg');
+    }
+    .tab-menu li .menuitem6 {
+      background-image: url('./image/bg.jpg');
+    }
+
+  </style>
+</head>
+<body>
+  <p>첫 번째 탭메뉴</p>
+  <ul class="tab-menu" id="tabMenu1">
+    <l1 class="menuitem1">google</l1>
+    <l1 class="menuitem2">facebook</l1>
+    <l1 class="menuitem3">pinterest</l1>
+    <l1 class="menuitem4">twitter</l1>
+    <l1 class="menuitem5">airbnb</l1>
+    <l1 class="menuitem6">path</l1>
+  </ul>
+  <p>두 번째 탭메뉴</p>
+  <ul class="tab-menu" id="tabMenu2">
+    <l1 class="menuitem1">google</l1>
+    <l1 class="menuitem2">facebook</l1>
+    <l1 class="menuitem3">pinterest</l1>
+    <l1 class="menuitem4">twitter</l1>
+    <l1 class="menuitem5">airbnb</l1>
+    <l1 class="menuitem6">path</l1>
+  </ul>
+
+
+  <script>
+    $(document).ready(function(){
+      // 탭메뉴 코드가 동작할 수 있도록 tabMenu() 함수 호출
+      tabMenu('#tabMenu1 li');
+      tabMenu('#tabMenu2 li');
+    });
+
+    function tabMenu(selector){
+      // 선택한 탭메뉴를 저장할 변수
+      var $selectMenuItem = null;
+      // 메뉴 항목에 클릭 이벤트 등록
+      $(selector).click(function(){
+        // 기존 선택 메뉴 항목이 있으면 비선택 상태로 만들기
+        if($selectMenuItem!=null){
+          $selectMenuItem.removeClass('select');
+        }
+
+        // 클릭한 메뉴 항목을 신규 선택 메뉴 항목으로 저장
+        $selectMenuItem = $(this);
+
+        // 선택 상태로 만들기
+        $selectMenuItem.addClass('select');
+      })
+    }
+  </script>
+</body>
+</html>
