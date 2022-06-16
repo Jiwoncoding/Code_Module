@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <title>심플 갤러리를 함수로 만들기</title>
+  <style>
+    .image-container {
+      position: relative;
+      border: 1px solid #000;
+      height: 600px;
+    }
+    .image-container img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 120px;
+    }
+  </style>
+</head>
+<body>
+  <p>container1</p>
+  <div class="image-container" id="container1">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+  </div>
+  <p>container2</p>
+  <div class="image-container" id="container2">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+    <img src="./image/smartgirl.gif" alt="똑똑한여자">
+  </div>
+
+
+  <script>
+    $(document).ready(function(){
+      // 이미지 찾기
+      var $images1 = $('#container1 img');
+      var $images2 = $('#container2 img');
+
+      // 이미지 배열하기
+      showGallery($images1, 6,150,150);
+      showGallery($images2, 4,200,200);
+    });
+
+    // 이미지 배열하기
+    function showGallery($images, count,width,height){
+      // 이미지 개수 구하기
+      var length = $images.length;
+
+      // 이미지 배열하기
+      for(var i=0; i<length; i++){
+        // n번째 이미지 구하기
+        var $img = $images.eq(i);
+
+        // 위치 값 구하기
+        var x = 100+((i%3)*width);
+        var y = 100+(parseInt(i/count)*height);
+
+        // 위치 설정
+        $img.css({
+          left: x,
+          top: y
+        });
+      }
+    }
+  </script>
+</body>
+</html>
