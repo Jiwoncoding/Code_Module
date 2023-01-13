@@ -1,0 +1,28 @@
+
+## 이동할 거리 백분율 구하기
+
+<script type="text/javascript">
+$(function(){
+
+	var text = $('.progress .txt');                           // 퍼센트 값 el
+	var progressBar = $('.progress .bar');                // 퍼센트 게이지 el
+	
+	$(window).scroll(function(){
+		// console.log('scroll');
+		getPercent();
+	})
+
+	function getPercent(){
+		var scrollHeight = $('.section01').height();                 // 스크롤 거리를 구함
+
+	}
+
+	function init() {
+		getPercent();
+	}
+
+	init();
+
+});
+
+</script> 
